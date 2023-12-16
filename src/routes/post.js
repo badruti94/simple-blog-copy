@@ -3,6 +3,7 @@ const router = express.Router()
 const postController = require('../controllers/post')
 const {mustRole} = require('../middlewares/auth')
 
+router.patch('/:id/view', postController.incrementPostView)
 router.get('/', postController.getAllPost)
 router.get('/dashboard', mustRole('user'), postController.getPostDashboard)
 router.get('/save', mustRole('user'),  postController.getSavedPost)
@@ -27,6 +28,6 @@ router.delete('/comment/:id', mustRole('user'), postController.deletePostComment
 
 router.post('/image', postController.uploadImage)
 
-// router.patch('/:id/view', postController.incrementPostView)
+
 
 module.exports = router
