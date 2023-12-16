@@ -27,6 +27,6 @@ router.delete('/comment/:id', mustRole('user'), postController.deletePostComment
 
 router.post('/image', postController.uploadImage)
 
-router.patch('/:id/view', postController.incrementPostView)
+// router.patch('/:id/view', postController.incrementPostView)
 
 module.exports = router
