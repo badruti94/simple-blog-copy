@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 app.use(fileUpload())
 
-app.use('/v1/', routes)
+// app.use('/v1/', routes)
 
 app.use((error, req, res, next) => {
     const errorCode = error.errorCode || 500
