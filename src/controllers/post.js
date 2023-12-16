@@ -534,6 +534,7 @@ exports.uploadImage = async (req, res, next) => {
 
 exports.incrementPostView = async (req, res, next) => {
     try {
+        return res.status(200).send({ message: 'tes tes tes' })
         await postModel.increment({
             view: 1
         }, {
