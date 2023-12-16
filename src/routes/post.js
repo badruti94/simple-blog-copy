@@ -3,6 +3,9 @@ const router = express.Router()
 const postController = require('../controllers/post')
 const {mustRole} = require('../middlewares/auth')
 
+router.get('/:id/view2', (req, res) => {
+    res.send('tesss')
+})
 router.patch('/:id/view', postController.incrementPostView)
 router.get('/', postController.getAllPost)
 router.get('/dashboard', mustRole('user'), postController.getPostDashboard)
